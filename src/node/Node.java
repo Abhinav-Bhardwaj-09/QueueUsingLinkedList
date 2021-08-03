@@ -10,6 +10,7 @@ package node;
 public class Node {
     private int data;
     private Node nextNode;
+
     public Node (int data) {
         this.data = data;
         this.nextNode = null;
@@ -18,17 +19,16 @@ public class Node {
     public int getData() {
         return data;
     }
-    public Node getNext() {
-        return nextNode;
-    }
 
     public void setData(int data) {
         this.data = data;
     }
 
-    public void setNext(Node nextNode) {
-        this.nextNode = nextNode;
+    public Node getNextNode() {
+        return nextNode;
     }
 
-
+    public void setNextNode(Node nextNode) {
+        this.nextNode = nextNode;
+    }
 }
