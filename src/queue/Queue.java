@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
  */
 
 public class Queue {
-    private Node front, rear;
+    private Node frontNode, rearNode;
     private int length;
 
     // To return length of the Queue
@@ -31,14 +31,14 @@ public class Queue {
 
     // To add new element in the queue
     public void enqueue (int data) {
-        Node temp = new Node(data);
+        Node newNode = new Node(data);
         if(isEmpty()) {
-            front = temp;
+            frontNode = newNode;
         }
         else {
-            rear.setNext(temp);
+            rearNode.setNextNode(newNode);
         }
-        rear = temp;
+        rearNode = newNode;
         length++;
     }
 
@@ -51,12 +51,11 @@ public class Queue {
             return;
         }
 
-        int result = front.getData();
-        front = front.getNext();
-        if(front == null ) {
-            rear = null;
+        int result = frontNode.getData();
+        frontNode = frontNode.getNextNode();
+        if(frontNode == null ) {
+            rearNode = null;
         }
         length--;
     }
-
 }
