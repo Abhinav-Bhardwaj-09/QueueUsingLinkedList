@@ -58,4 +58,29 @@ public class Queue {
         }
         length--;
     }
+
+
+
+    // To display the elements of the queue
+    public void display() {
+        if(isEmpty()) {
+            System.out.println("Your queue is empty, so no element to display.");
+            return;
+        }
+        else if(length == 1) {
+            System.out.print("(Start) " + frontNode.getData() + " (End)");
+            return;
+        }
+
+        Node currentNode = frontNode;
+        System.out.print("(Start) ");
+        while (currentNode.getNextNode() != rearNode) {
+            if(currentNode != frontNode) {
+                System.out.print("--> ");
+            }
+            System.out.print(currentNode.getData());
+            currentNode = currentNode.getNextNode();
+        }
+        System.out.print(currentNode.getData() + " (End)");
+    }
 }
