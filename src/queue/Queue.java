@@ -15,20 +15,21 @@ public class Queue {
     private Node front, rear;
     private int length;
 
-    public Queue() {
-        this.front = null;
-        this.rear = null;
-        this.length = 0;
-    }
-
+    // To return length of the Queue
     public int length() {
         return length;
     }
 
+
+
+    // To check whether queue is empty or not
     public boolean isEmpty() {
         return length == 0;
     }
 
+
+
+    // To add new element in the queue
     public void enqueue (int data) {
         Node temp = new Node(data);
         if(isEmpty()) {
@@ -41,6 +42,9 @@ public class Queue {
         length++;
     }
 
+
+
+    // To delete element in the queue
     public int dequeue() {
         if(isEmpty()) {
             throw new NoSuchElementException("Queue is already empty");
@@ -53,4 +57,5 @@ public class Queue {
         length--;
         return result;
     }
+
 }
