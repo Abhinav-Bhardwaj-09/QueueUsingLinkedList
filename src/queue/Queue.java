@@ -45,17 +45,18 @@ public class Queue {
 
 
     // To delete element in the queue
-    public int dequeue() {
+    public void dequeue() {
         if(isEmpty()) {
-            throw new NoSuchElementException("Queue is already empty");
+            System.out.println("Your queue is already empty.");
+            return;
         }
+
         int result = front.getData();
         front = front.getNext();
         if(front == null ) {
             rear = null;
         }
         length--;
-        return result;
     }
 
 }
