@@ -2,7 +2,6 @@ package queue;
 
 import node.Node;
 
-import java.util.NoSuchElementException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -50,12 +49,14 @@ public class Queue {
             System.out.println("Your queue is already empty.");
             return;
         }
-
-        int result = frontNode.getData();
-        frontNode = frontNode.getNextNode();
-        if(frontNode == null ) {
+        else if(length == 1) {
+            frontNode = null;
             rearNode = null;
+            length--;
+            return;
         }
+
+        frontNode = frontNode.getNextNode();
         length--;
     }
 
